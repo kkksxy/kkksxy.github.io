@@ -1,2 +1,2 @@
 # kkksxy.github.io
- a practice example
+ assignment of COMM5961
