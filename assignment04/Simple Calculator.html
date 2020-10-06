@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html, body {
+            margin:0px; 
+            padding:0px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+
+        #sidebar, form {
+            border: .75px black solid;
+            margin-bottom:10px;
+            margin: auto;
+            text-align: center;
+        }
+
+        #sidebar {
+            width:29.5%;
+            box-sizing:border-box;
+            border:0px;
+            text-align: center;
+        }
+
+        form#login {
+            padding-top:10px;
+            padding-bottom:10px;
+            margin:7px;
+        }
+
+        form#login #submitBtn {
+            margin-left:5px;
+            padding:10px 10px;
+            border:#000 solid .75px;
+        }
+
+        form#login #submitBtn:hover {
+            margin-left:5px;
+            padding:10px 10px;
+            border:black solid .75px;
+            background:black;
+            color:white;
+        }
+
+        .form-group {
+            padding-bottom:5px;
+        }
+
+        .form-group label {
+            display:block;
+            margin-left:5px;
+        }
+
+        .form-group input {
+            width:80%;
+            margin-left:5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id='sidebar'>
+                <form id='login'>
+                    <div class='form-group'>
+                        <label>
+                            请输入X:
+                        </label>
+                        <input type='text' name='numberx'>
+                    </div>
+                    <br>
+                    <div class='form-group'> 
+                        <label>
+                            请输入Y:
+                        </label>
+                        <input type='text' name='numbery'>
+                    </div>
+                    <br>
+                    <button id='submitBtn' type='submit'>Send</button>
+                    <br>
+                    <br>
+                </form>
+                <br>
+    </div>
+
+    <script>
+        function Game() {
+         var numberx = parseInt(document.forms[0].numberx.value);
+         var numbery = parseInt(document.forms[0].numbery.value);
+         var output  = numberx+numbery;
+         alert("输出为"+output);
+        }
+        document.getElementById('submitBtn').addEventListener('click', Game);
+    </script>
+</body>
+</html>
