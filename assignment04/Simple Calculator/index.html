@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Calculator</title>
     <style>
 
         html, body {
@@ -66,6 +66,15 @@
     </style>
 </head>
 <body>
+    <div class="box1">
+        <h1>Welcome to the Simple Calculator!</h1>
+        <br>
+        <br>
+        <p>请注意：X和Y必须同属于数字，加法运算才能成立；否则，结果为X与Y的简易连接。</p>
+        <br>
+        <br>
+    <div>
+
     <div id='sidebar'>
                 <form id='login'>
                     <div class='form-group'>
@@ -82,7 +91,7 @@
                         <input type='text' name='numbery'>
                     </div>
                     <br>
-                    <button id='submitBtn' type='submit'>Send</button>
+                    <button id='submitBtn' type="submit">输出</button>
                     <br>
                     <br>
                 </form>
@@ -91,9 +100,16 @@
 
     <script>
         function Game() {
-         var numberx = parseInt(document.forms[0].numberx.value);
-         var numbery = parseInt(document.forms[0].numbery.value);
-         var output  = numberx+numbery;
+         var numberx = document.forms[0].numberx.value;
+         var numbery = document.forms[0].numbery.value;
+         var output;
+         if(!isNaN(numberx) && !isNaN(numbery))
+         {
+             numberx = parseInt(numberx);
+             numbery = parseInt(numbery);
+         }
+         else{}
+         output = numberx + numbery;
          alert("输出为"+output);
         }
         document.getElementById('submitBtn').addEventListener('click', Game);
